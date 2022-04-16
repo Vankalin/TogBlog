@@ -1,0 +1,45 @@
+
+/* Postlist start */
+.none-post{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+}
+/* Postlist end */
+
+/* Post start */
+strong{
+    font-size: 30px;
+}
+.post{
+    margin-top: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: black solid 1px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.post__content{
+    text-align: center;
+}
+.post__text{
+    font-style: italic;
+
+}
+
+.post__btn{
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 20px;
+
+}
+.post__btn:hover{
+    background-color: rgba(243, 105, 105, 0.623);
+
+
+}
+/* Post end */
+
