@@ -12,34 +12,71 @@ strong{
     font-size: 30px;
 }
 .post{
-    margin-top: 40px;
+    display: flex;
+    margin-top: 10px;
     color: rgb(0, 0, 0);
     font-size: 20px;
     border: black solid 1px;
     padding: 15px;
     border-radius: 10px;
+    justify-content: space-between;
 }
 
 .post__content{
-    text-align: center;
+    text-align: left;
 }
 .post__text{
     font-style: italic;
 
 }
-
-.post__btn{
-    margin-top: 20px;
-    width: 100%;
-    height: 30px;
-    border-radius: 20px;
-    font-size: 20px;
+.post__btns{
+    display: flex;
+    align-items: center;
 
 }
-.post__btn:hover{
+
+.post__btn{
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    height: 50px;
+    cursor: pointer;
+
+}
+.post__btn_del:hover{
     background-color: rgba(243, 105, 105, 0.623);
 
-
+}
+.post__btn_edit:hover{
+    background-color: rgba(107, 255, 102, 0.623);
 }
 /* Post end */
 
+/* Postlist-animated start */
+.post-enter {
+    transform: scale(0);
+
+}
+.post-enter-active {
+    transform: scale(1);
+    transition: all 500ms ease-in;
+
+    
+
+}
+.post-exit {
+    opacity: 1;
+    
+
+
+}
+.post-exit-active {
+    transform: scale(0);
+    transition: all 500ms ease-in;
+
+
+
+}
+
+/* Postlist-animated end */
