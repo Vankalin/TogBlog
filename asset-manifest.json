@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TogBlog/static/css/main.40cb79c0.css",
+    "main.js": "/TogBlog/static/js/main.ff7d016f.js",
+    "index.html": "/TogBlog/index.html",
+    "main.40cb79c0.css.map": "/TogBlog/static/css/main.40cb79c0.css.map",
+    "main.ff7d016f.js.map": "/TogBlog/static/js/main.ff7d016f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40cb79c0.css",
+    "static/js/main.ff7d016f.js"
+  ]
+}
