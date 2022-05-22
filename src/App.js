@@ -12,18 +12,24 @@ import { usePosts } from './hooks/usePosts';
 import PostService from './API/PostService';
 import MyLoader from './Components/UI/loader/MyLoader';
 import { useFetching } from './hooks/useFetching';
+import { getPageCount } from './utils/pages';
 
 function App() {
     const [posts, setPosts] = useState([])
     const [filter, setFilter] = useState({sort:'', query:''});
     const [modal, setModal] = useState(false);
+    const [totalPages,setTotalPages] = useState(0);
+    const [limit,setLimit] = useState(10);
+    const [page,setPage] = useState(1);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const [fetchPost, isPostLoading, postError] = useFetching(async()=>{
-      const posts = await PostService.getAll();
-      setPosts(posts);
+      const response = await PostService.getAll(limit, page);
+      const totalCount = response.headers['x-total-count']; 
+      setPosts(response.data);
+      setTotalPages(getPageCount(totalCount, limit));
+      
     })
     
-
     useEffect(() => {
       fetchPost();
     }, [])
@@ -38,6 +44,9 @@ function App() {
 
     const removePost = (post)=>{
       setPosts(posts.filter(p=>p.id !== post.id))
+      console.log(post.id);  
+      console.log(posts);
+
     }
 
 
@@ -54,7 +63,9 @@ function App() {
           <PostForm create={createPost}/>
         </MyModal>
         <PostFilter filter={filter} setFilter={setFilter}/>
-
+        {postError&&
+          <h1>Error ${postError}</h1>
+        }
         {isPostLoading
           ?<MyLoader/>
           :<Postlist remove={removePost} posts={sortedAndSearchedPosts} title={"Post List 1"}/>

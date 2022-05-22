@@ -7,7 +7,7 @@ const Post = function (props) {
         <div>
             <div className="post">
                 <div className="post__content">
-                    <strong><p style={{color:'red',display:'inline'}}>{props.number})</p> {props.post.title}</strong>
+                    <strong><p style={{color:'red',display:'inline'}}>{props.number}</p> {props.post.title}</strong>
                     <div className="post__text">
                         {props.post.body}
                     </div>
