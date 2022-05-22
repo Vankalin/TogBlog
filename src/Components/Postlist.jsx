@@ -4,7 +4,7 @@ import { TransitionGroup } from 'react-transition-group';
 import Post from './Post';
 import './style.css'; 
 
-const Postlist = function ({posts, title, remove}) {
+const Postlist = function ({posts, title, remove, edit}) {
     if(!posts.length){
         return(<h1 className='none-post'>Posts not found!</h1>)
     }
@@ -21,7 +21,7 @@ const Postlist = function ({posts, title, remove}) {
                         timeout={500}
                         classNames="post"
                     >
-                        <Post remove={remove} number={index+1} post={post}/>
+                        <Post remove={remove} edit={edit} number={index+1} post={post}/>
                     </CSSTransition>   
                 )}
             </TransitionGroup>

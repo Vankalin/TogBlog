@@ -6,21 +6,30 @@
     border-radius: 100px;
     transition: all .2s;
     margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 5px rgb(0, 7, 70) ridge;
+
+    
 }
 
 .MyBtn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 5px rgb(1, 19, 182) ridge;
+
+    background-color: grey;
 }
 
 .MyBtn:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 .MyBtn-animated {
     animation: moveInBottom 5s ease-out;
     animation-fill-mode: backwards;
+    
 }
 
 @keyframes moveInBottom {

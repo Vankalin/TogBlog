@@ -7,10 +7,22 @@
 #root{
     display: flex;
     justify-content: center;
+    color: white;
+    height: 100%;
+}
+body{
+    background-color: rgb(0, 0, 0);
 }
 .App{
-    width: 90%;
-
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    color: white;
 }
+.app-btns{
+    display: flex;
+    justify-content: space-around;
+}
+
 
 

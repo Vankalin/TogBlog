@@ -12,19 +12,25 @@ strong{
     font-size: 30px;
 }
 .post{
+    
     display: flex;
     margin-top: 10px;
-    color: rgb(0, 0, 0);
+    color:rgb(167, 167, 167);
     font-size: 20px;
-    border: black solid 1px;
+    border: wheat solid 1px;
     padding: 15px;
     border-radius: 10px;
     justify-content: space-between;
     
 }
+.post{
 
+}
 .post__content{
     text-align: left;
+}
+.post__content strong{
+    color:rgb(96, 145, 218);
 }
 .post__text{
     font-style: italic;
@@ -32,7 +38,8 @@ strong{
 }
 .post__btns{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
@@ -43,6 +50,7 @@ strong{
     margin: 5px;
     height: 50px;
     cursor: pointer;
+    width: 100%;
 
 }
 .post__btn_del:hover{
