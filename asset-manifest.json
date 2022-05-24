@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TogBlog/static/css/main.797b749c.css",
-    "main.js": "/TogBlog/static/js/main.04371852.js",
+    "main.css": "/TogBlog/static/css/main.ada5018b.css",
+    "main.js": "/TogBlog/static/js/main.210efee3.js",
     "index.html": "/TogBlog/index.html",
-    "main.797b749c.css.map": "/TogBlog/static/css/main.797b749c.css.map",
-    "main.04371852.js.map": "/TogBlog/static/js/main.04371852.js.map"
+    "main.ada5018b.css.map": "/TogBlog/static/css/main.ada5018b.css.map",
+    "main.210efee3.js.map": "/TogBlog/static/js/main.210efee3.js.map"
   },
   "entrypoints": [
-    "static/css/main.797b749c.css",
-    "static/js/main.04371852.js"
+    "static/css/main.ada5018b.css",
+    "static/js/main.210efee3.js"
   ]
 }
