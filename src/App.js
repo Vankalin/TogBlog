@@ -1,17 +1,15 @@
 import React from 'react';
 import './App.css'; 
 import { useMemo,useState, useEffect } from 'react';
-import ClassCounter from './Components/Counters/ClassCounter';
-import Counter from './Components/Counters/Counter';
 import Postlist from './Components/Postlist';  
 import PostForm from './Components/PostForm';
 import PostFormEdit from './Components/PostFormEdit';
 import PostFilter from './Components/PostFilter';
-import MyModal from './Components/UI/modal/MyModal';
-import MyButton from './Components/UI/button/MyButton';
+import MyModal from './Components/UI/modal';
+import MyButton from './Components/UI/button/';
 import { usePosts } from './hooks/usePosts';
 import PostService from './API/PostService';
-import MyLoader from './Components/UI/loader/MyLoader';
+import MyLoader from './Components/UI/loader';
 import { useFetching } from './hooks/useFetching';
 import { getPageCount } from './utils/pages';
 
@@ -50,37 +48,24 @@ function App() {
 
     const removePost = (post)=>{
       setPosts(posts.filter(p=>p.id !== post.id))
-
+      console.log(posts)
     }
 
 
-    const showModalEdit =(post)=>{
+    const showModalEdit =(post,ide)=>{
       setModalEdit(true);
-      setPostEdit(post)
-      
-
-      
+      setPostEdit({...post, ide:ide})
+      console.log(postEdit)
     }
-
 
     const editPost=(post)=>{
       const locPosts = [...posts]
-      locPosts.splice(post.id-1, 1, post);
+      locPosts[post.ide] = post;     
       setPosts(locPosts);
-      console.log(posts)
-
-      console.log(locPosts)
       setModalEdit(false);
     }
-
-
-
-
-
     return ( 
       <div className = "App" >
-        {/* <Counter/>
-        <ClassCounter/> */}
         <div className='app-btns'>
           <MyButton onClick={fetchPost}>GET POST</MyButton>
           <MyButton onClick={()=>setModalCreate(true)}>Create post</MyButton>
@@ -93,7 +78,7 @@ function App() {
         <MyModal visible={modalEdit} setVisible={setModalEdit}>
           <PostFormEdit edit={editPost} postEdit={postEdit}/>
         </MyModal>
-
+        <hr style={{margin:'20px 0'}}/>
         <PostFilter filter={filter} setFilter={setFilter}/>
         {postError&&
           <h1>Error ${postError}</h1>

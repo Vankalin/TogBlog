@@ -14,7 +14,7 @@ const Post = function (props) {
                 </div>
                 <div className="post__btns">
                     <button onClick={()=>props.remove(props.post)} className="post__btn post__btn_del">Delete</button>
-                    <button onClick={()=>props.edit(props.post)} className="post__btn post__btn_edit">Edit</button>
+                    <button onClick={()=>{props.edit(props.post,props.ide)}} className="post__btn post__btn_edit">Edit</button>
                 </div>
             </div>
 

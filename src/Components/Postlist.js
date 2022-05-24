@@ -21,7 +21,7 @@ const Postlist = function ({posts, title, remove, edit}) {
                         timeout={500}
                         classNames="post"
                     >
-                        <Post remove={remove} edit={edit} number={index+1} post={post}/>
+                        <Post remove={remove} ide ={index} edit={edit} number={index+1} post={post}/>
                     </CSSTransition>   
                 )}
             </TransitionGroup>

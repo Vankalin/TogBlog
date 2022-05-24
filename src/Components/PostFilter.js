@@ -1,11 +1,10 @@
 import React from 'react'
-import MyInput from './UI/input/MyInput'
-import MySelect from './UI/select/MySelect'
+import MyInput from './UI/input/'
+import MySelect from './UI/select/'
 
 const PostFilter = ({filter, setFilter}) => {
   return (
-    <div>
-           <hr style={{margin:'20px 0'}}/>
+    <div className='post-filter'>
            <MyInput
               placeholder={'Search...'}
               value={filter.query}

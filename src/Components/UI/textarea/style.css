@@ -1,0 +1,10 @@
+.modal-textarea{
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    color: teal; 
+    border: 1px solid black;
+    margin-top: 5px;
+    border-radius: 5px;
+
+}

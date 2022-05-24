@@ -1,22 +1,21 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
-import MyButton from './UI/button/MyButton'
-import MyInput from './UI/input/MyInput'
+import { useState } from 'react'
+import MyButton from './UI/button'
+import MyInput from './UI/input'
 
 
- const PostFormEdit = ({edit,postEdit}) => {
-
+ const PostForm = ({create}) => {
+   
     const [postText, setPostText] = useState({title:'', body:''})
-  
-    useEffect(() => {
-      setPostText(postEdit)
 
-    }, [postEdit])
-    
-    const editCurrentPost = (e)=>{
+
+    const addNewPost = (e)=>{
         e.preventDefault()
-        console.log(postText)
-        edit(postText)
+        const newPost ={
+            ...postText, id:Date.now()
+        }
+        create(newPost);
+        setPostText({title:'', body:''});
       }
   return (
     <form>
@@ -24,7 +23,7 @@ import MyInput from './UI/input/MyInput'
           value={postText.title}
           onChange={e=>setPostText({...postText, title: e.target.value})}
           type="text" 
-          placeholder={postText.id}
+          placeholder="Post name"
         />
         <MyInput 
           value={postText.body}
@@ -32,12 +31,12 @@ import MyInput from './UI/input/MyInput'
           type="text" 
           placeholder="Post descr"
         />
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-          <MyButton onClick ={editCurrentPost}>Edit post</MyButton>
+        <div style={{display: 'flex',justifyContent: 'center'}}>
+          <MyButton onClick ={addNewPost}>Create post</MyButton>
         </div>
         
         
     </form>
   )
 }
-export default PostFormEdit;
+export default PostForm;

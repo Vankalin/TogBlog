@@ -1,4 +1,4 @@
-.MyBtn {
+.my-btn {
     text-transform: uppercase;
     text-decoration: none;
     padding: 15px 40px;
@@ -13,20 +13,20 @@
     
 }
 
-.MyBtn:hover {
+.my-btn:hover {
     transform: translateY(-3px);
     border: 5px rgb(1, 19, 182) ridge;
 
     background-color: grey;
 }
 
-.MyBtn:active {
+.my-btn:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     
 }
 
-.MyBtn-animated {
+.my-btn-animated {
     animation: moveInBottom 5s ease-out;
     animation-fill-mode: backwards;
     
